@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="checkout.css">
+        <title>Checkout</title>
+    </head>
+    <body>
+        <div class="checkout-wrapper">
+            <h1 class="checkout-title">Checkout <span class="items-count">3 ITEMS</span></h1>
+            <div class="checkout">
+                <!--LEFT-->
+                <div class="products">
+                    <div class="prod">
+                        <img src="resources/Gold@2x.png" alt="iphone 12 pro">
+                        <div>
+                            <h3>iPhone 12 Pro</h3>
+                            <p>Golden</p>
+                            <span class="simbol">x 1</span>
+                        </div>
+                        <span class="price">$999.00</span>
+                    </div>
+                    <div class="prod">
+                        <img src="resources/Apple-watchx2.png" alt="iphone 12 pro">
+                        <div>
+                            <h3>Apple Watch</h3>
+                            <p>Blue</p>
+                            <span class="simbol">x 1</span>
+                        </div>
+                        <span class="price">$399.00</span>
+                    </div>
+                    <div class="prod">
+                        <img src="resources/iMac@2x.png" alt="iphone 12 pro">
+                        <div>
+                            <h3>iMac</h3>
+                            <p>Green</p>
+                            <span class="simbol">x 1</span>
+                        </div>
+                        <span class="price">$1199.00</span>
+                    </div>
+                    <div class="coupon">
+                        <input type="text" placeholder="Enter coupon code">
+                        <button class="apply">Apply Coupon</button>
+                    </div>
+                    <div class="amount">
+                        <div><span>Sub total</span><span>$2597.00</span></div>
+                        <div><span>Tax</span><span>$623.28</span></div>
+                        <div class="total"><span>Total</span><span>$3220.28</span></div>
+                    </div>
+
+                </div>      
+                <!--RIGHT-->
+                <div class="info">
+                    <h2>Contact Information</h2>
+                    <form>
+                        <label for="name">First & Last name</label>
+                        <input type="text" id="name" placeholder="Enter first & last name">
+
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter email address">
+                        
+                        <div class="row">
+                            <div>
+                                <label for="country">Country</label>
+                                <select id="country" name="country">
+                                    <option value="Finland">Finland</option>
+                                    <option value="Latvia">Latvia</option>
+                                    <option value="United States">United States</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Germany">Germany</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="post">Postal Code</label>
+                                <input type="text" id="post" placeholder="00270">
+                            </div>
+                        </div>
+                        <button class="continue">Continue</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

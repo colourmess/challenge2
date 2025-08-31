@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  color: #222;
+  padding: 2rem;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  background: url("resources/background-image.png") no-repeat center top/cover;
+  z-index: -1; /* lai fons būtu aiz satura */
+}
+
+.checkout-wrapper {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.checkout-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #fff;
+}
+
+.checkout-title .items-count {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-left: 0.5rem;
+}
+
+.checkout {
+    display: flex;
+    gap: 2rem;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+.products {
+  flex: 1;
+  background: #dfdfe0;
+  padding: 1.5rem;
+}
+
+.prod {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* vairs neattālina pa visu platumu */
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+
+.prod img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-right: 1rem;
+  border-radius: 8px;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #bbbbbb;
+}
+
+.prod h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.prod p {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.prod .simbol {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 2px;
+  color: #444;
+}
+
+.prod .price {
+  margin-left: auto;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Coupon */
+.coupon {
+  display: flex;
+  margin-top: 1.5rem;
+  border-top: 1px solid #ddd;
+}
+
+.coupon input {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px 0 0 8px;
+  font-size: 0.95rem;
+  margin-top: 1.5rem;
+}
+
+.coupon .apply {
+  background: #000;
+  color: #fff;
+  padding: 0 1.2rem;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+  margin-top: 1.5rem;
+}
+
+.coupon .apply:hover {
+  background: #333;
+}
+
+/* Totals */
+.amount {
+  padding-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.amount div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.amount .total {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* Right (Contact Info) */
+.info {
+  flex: 1;
+  padding: 1.5rem;
+
+}
+
+.info h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 4px;
+  display: block;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #000;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.continue {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.continue:hover {
+  background: #333;
+}
+/* ============ RESPONSIVE ============ */
+
+/* Planšetēm un mazākiem ekrāniem */
+@media (max-width: 992px) {
+  .checkout {
+    flex-direction: column; /* produkti un info zem viens otra */
+    gap: 1.5rem;
+  }
+
+  .prod img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .checkout-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* Telefoniem */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  .checkout-wrapper {
+    max-width: 100%;
+  }
+
+  .prod img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .checkout-title {
+    font-size: 1.2rem;
+  }
+
+  .continue {
+    width: 100%; /* poga pa visu platumu */
+  }
+}
